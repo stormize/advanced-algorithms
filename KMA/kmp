@@ -1,0 +1,17 @@
+# python 3
+def prefix(s):
+    result = []
+    border = 0
+    result.append(0)
+    for i in range(1, len(s)):
+        while border > 0:
+            border = s[border - 1]
+        if s[border] == s[i]:
+            border += 1
+        else:
+            border = 0
+    result[i] = border
+    return result
+
+
+print(prefix("ababcaba"))
